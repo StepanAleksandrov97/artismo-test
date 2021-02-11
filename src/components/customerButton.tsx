@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
+//TODO index files
 export const CustomerButton = () => {
   return (
     <TouchableOpacity style={styles.container}>

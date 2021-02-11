@@ -1,20 +1,21 @@
 import React from 'react';
 import {Image, ImageBackground, StyleSheet, Text, View} from 'react-native';
 import {CustomerButton} from '../components/customerButton';
+import images from '../assets'
 
 export const LoggedOut = () => {
   return (
-    <View>
-      {/* <ImageBackground source={require('../../assets/bacground.png')}> */}
+    <View style={{flex:1}}>
+      <ImageBackground source={images.BACKGROUND} style={{flex:1}}>
+      <Image source={images.LOGO}/>
       <View style={styles.container}>
-        <View></View>
+        <Image source={images.LOGGEDPHOTO}/>
         <View style={styles.description}>
           <Text style={styles.title}>Pawel Czerwinski</Text>
           <Text style={styles.subTitle}>@pawel_czerwinski</Text>
         </View>
       </View>
-
-      {/* </ImageBackground> */}
+      </ImageBackground>
       <CustomerButton />
     </View>
   );
@@ -23,7 +24,7 @@ export const LoggedOut = () => {
 const styles = StyleSheet.create({
   container: {
     width: 375,
-    height: 707,
+    height: '90%',
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'flex-end',
@@ -34,14 +35,14 @@ const styles = StyleSheet.create({
     marginLeft: 16,
   },
   title: {
-    fontFamily: 'Roboto',
+    // fontFamily: 'Roboto',
     fontStyle: 'normal',
     fontWeight: 'bold',
     fontSize: 13,
     lineHeight: 15,
   },
   subTitle: {
-    fontFamily: 'Roboto',
+    // fontFamily: 'Roboto',
     fontStyle: 'normal',
     fontWeight: 'normal',
     fontSize: 11,
