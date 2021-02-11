@@ -6,7 +6,8 @@ const Images: IHashMap<ImageSourcePropType> = {
     LOGGEDPHOTO: require('./loggedPhoto.png'),
     GALLERY: require('./gallery.png'),
     LOGO: require('./logo.png'),
-    USERPHOTO: require('./userPhoto.png')
+    USERPHOTO: require('./userPhoto.png'),
+    BACKBUTTON: require('./buttonBack.png')
 }
 
 
