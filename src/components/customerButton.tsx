@@ -4,10 +4,10 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 type TPops = {
   navigateUrl?: string,
   navigation?: object | any
+  buttonText: string
 }
 //TODO index files
-export const CustomerButton = ({navigateUrl, navigation}: TPops ) => {
-// return navigation.navigate('Register')
+export const CustomerButton = ({navigateUrl, navigation, buttonText} : TPops ) => {
 
 const pressHandler = () => {
   return navigation.navigate(navigateUrl)
@@ -16,7 +16,7 @@ const pressHandler = () => {
   return (
     <TouchableOpacity style={styles.container} onPress={pressHandler}>
       <View style={styles.button}>
-        <Text style={styles.text}>Register</Text>
+        <Text style={styles.text}>{buttonText}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -25,11 +25,10 @@ const pressHandler = () => {
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    marginTop: 16,
     marginBottom: 16
   },
   button: {
-    width: 343,
+    width: '100%',
     height: 52,
     backgroundColor: '#000000',
     borderRadius: 6,
@@ -37,7 +36,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text: {
-    // fontFamily: 'Roboto',
+    fontFamily: 'Roboto-Regular',
     fontStyle: 'normal',
     fontWeight: '900',
     textTransform: 'uppercase',

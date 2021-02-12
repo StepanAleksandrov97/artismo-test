@@ -7,7 +7,11 @@ const Images: IHashMap<ImageSourcePropType> = {
     GALLERY: require('./gallery.png'),
     LOGO: require('./logo.png'),
     USERPHOTO: require('./userPhoto.png'),
-    BACKBUTTON: require('./buttonBack.png')
+    BACKBUTTON: require('./buttonBack.png'),
+    HOME: require('./homeIcon.svg'),
+    CHATS: require('./chatsIcon.svg'),
+    PROFILE: require('./profileIcon.svg'),
+    SEARCH: require('./searchIcon.svg'),
 }
 
 

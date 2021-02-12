@@ -1,3 +1,4 @@
-export {Home} from './home'
-export {Register} from './auth'
-export {StartScreen} from './startScreen'
+export {HomeNavigation} from './home'
+export {RegisterFirstScreen} from './register'
+export {RegisterSecondScreen} from './register'
+export {StartScreen} from './preview'
