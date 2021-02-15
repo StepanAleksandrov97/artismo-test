@@ -1,4 +1,4 @@
-import { Platform, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
     container: {
@@ -6,14 +6,7 @@ export default StyleSheet.create({
       justifyContent: 'flex-start',
       paddingLeft: 16,
       paddingRight: 16,
-      ...Platform.select({
-        android: {
-          paddingTop: 28
-        },
-        ios: {
-          paddingTop: 60.35
-        },
-      }),
+      paddingTop: 28,
       backgroundColor: '#ffffff'
     },
     header: {

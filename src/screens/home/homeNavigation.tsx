@@ -1,16 +1,25 @@
 import * as React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {HomeScreen} from '../home'
+import { HomeScreen, Search, Chats } from '../index';
 
-const Tab = createBottomTabNavigator();
+
+export type TabParamList = {
+  Home: undefined;
+  Search: undefined;
+  Add: undefined;
+  Chats: undefined;
+  Profile: undefined;
+}
+
+const Tab = createBottomTabNavigator<TabParamList>();
 
 export const HomeNavigation = () => {
   return (
     <Tab.Navigator >
       <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Searc" component={HomeScreen} />
+      <Tab.Screen name="Search" component={Search} />
       <Tab.Screen name="Add" component={HomeScreen} />
-      <Tab.Screen name="Message" component={HomeScreen} />
+      <Tab.Screen name="Chats" component={Chats} />
       <Tab.Screen name="Profile" component={HomeScreen} />
     </Tab.Navigator>
   );
