@@ -1,20 +1,27 @@
-import React from 'react';
-import { Image, Text, TouchableOpacity } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { Form } from '../../components';
-import images from '../../assets'
-import styles from '../register/style'
+import React, { useCallback } from 'react';
+import { useNavigation } from '@react-navigation/native';
+import {
+  Image,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+import images from '../../assets';
+import styles from './style'
+//TODO import from components
+import { CustomForm } from '../../components';
 
-export const Login = ({navigation}: any) => {
-  const naviLink = "Home" 
+export const Login = () => {
+  const {navigate, goBack} = useNavigation();
+  const navigateToHome = useCallback(() => navigate('Home'), []);
 
   return (
-    <SafeAreaView style={styles.container}>
-      <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Image  source={images.BACKBUTTON} />
+	  <View style={styles.container}>
+      <TouchableOpacity onPress={goBack}>
+        <Image source={images.BACKBUTTON} />
       </TouchableOpacity>
       <Text style={styles.header}>Log in</Text>
-      <Form navigateUrl={naviLink} navigation={navigation} buttonText='log in'/>
-    </SafeAreaView>
+      <CustomForm navigate={navigateToHome} buttonText='log in'/>
+	  </View>
   );
 };

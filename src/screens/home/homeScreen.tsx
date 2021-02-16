@@ -1,12 +1,13 @@
-import React from 'react';
-import { Text, View, Image, ScrollView } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import React from 'react'
+import { Text, View, Image, ScrollView } from 'react-native'
+// @ts-ignore
+import MasonryList from 'react-native-masonry-list'
 import styles from './style'
 import images from '../../assets'
 
 export const HomeScreen = () => { 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <Text style={styles.header}>Discover</Text>
       <ScrollView>
         <Text style={styles.subtitle}>What’s new today</Text>
@@ -18,8 +19,26 @@ export const HomeScreen = () => {
               <Text style={styles.descriptionSubTitle}>@pawel_czerwinski</Text>
             </View>
         </View>
+        <Text style={styles.subtitle}>Browse all</Text>
+        <MasonryList
+          images={[
+            { URL: "https://luehangs.site/pic-chat-app-images/attractive-balance-beautiful-186263.jpg" },
+            { uri: "https://luehangs.site/pic-chat-app-images/beautiful-blond-blonde-hair-478544.jpg" },
+            { uri: "https://luehangs.site/pic-chat-app-images/beautiful-blond-blonde-hair-478544.jpg" },
+            { uri: "https://luehangs.site/pic-chat-app-images/beautiful-blond-blonde-hair-478544.jpg" },
+            { uri: "https://luehangs.site/pic-chat-app-images/beautiful-blond-blonde-hair-478544.jpg" },
+            { uri: "https://luehangs.site/pic-chat-app-images/beautiful-blond-blonde-hair-478544.jpg" },
+            { uri: "https://luehangs.site/pic-chat-app-images/beautiful-blond-blonde-hair-478544.jpg" },
+            { uri: "https://luehangs.site/pic-chat-app-images/beautiful-blond-blonde-hair-478544.jpg" },
+            { uri: "https://luehangs.site/pic-chat-app-images/beautiful-blond-blonde-hair-478544.jpg" },
+            { URL: "https://luehangs.site/pic-chat-app-images/attractive-balance-beautiful-186263.jpg" },
+            ]}
+          initialColToRender={2}
+          initialNumInColsToRender={5}
+          spacing={2}
+        />
       </ScrollView>
       
-    </SafeAreaView>
+    </View>
   );
 };

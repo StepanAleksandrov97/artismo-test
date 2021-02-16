@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
     subtitle: {
@@ -9,14 +9,23 @@ export default StyleSheet.create({
         lineHeight: 15,
         letterSpacing: 0.4,
         textTransform: 'uppercase',
-        marginBottom: 24
+        marginTop: 22,
+        marginBottom:24
     },
     container: {
         flex: 1,
         justifyContent: 'flex-start',
         paddingLeft: 16,
         paddingRight: 16,
-        backgroundColor: '#ffffff'
+        backgroundColor: '#ffffff',
+        ...Platform.select({
+        ios: {
+          paddingTop: 60
+        },
+        default: {
+          paddingTop: 28,
+        }
+      }),
       },
       header: {
         fontFamily: 'Comfortaa',
@@ -25,7 +34,7 @@ export default StyleSheet.create({
         fontSize: 36,
         lineHeight: 40.14,
         marginTop: 33,
-        marginBottom: 32
+        marginBottom: 10
       },
       imagePreview: {
           width: '100%',

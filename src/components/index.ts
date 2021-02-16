@@ -1,2 +1,3 @@
-export {Form} from './form'
-export {CustomerButton} from './customerButton'
+export { CustomForm } from './form'
+export { CustomerButton } from './customerButton'
+export { TextInputField } from './text-input'

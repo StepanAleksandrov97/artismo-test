@@ -1,7 +1,6 @@
 import { ImageSourcePropType } from 'react-native'
 
 const Images: IHashMap<ImageSourcePropType> = {
-    //TODO add all images
     BACKGROUND:require('./images/background.png'),
     LOGGEDPHOTO: require('./images/loggedPhoto.png'),
     GALLERY: require('./images/gallery.png'),

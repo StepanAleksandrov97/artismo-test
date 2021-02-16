@@ -1,9 +1,17 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#ffffff'
+        backgroundColor: '#ffffff',
+        ...Platform.select({
+        ios: {
+          paddingTop: 60
+        },
+        default: {
+          paddingTop: 28,
+        }
+      }),
     },
     header: {
         fontFamily: 'Comfortaa',

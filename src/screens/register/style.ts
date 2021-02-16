@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 
 export default StyleSheet.create({
     container: {
@@ -6,7 +6,14 @@ export default StyleSheet.create({
       justifyContent: 'flex-start',
       paddingLeft: 16,
       paddingRight: 16,
-      paddingTop: 28,
+      ...Platform.select({
+        ios: {
+          paddingTop: 60
+        },
+        default: {
+          paddingTop: 28,
+        }
+      }),
       backgroundColor: '#ffffff'
     },
     header: {
@@ -17,14 +24,6 @@ export default StyleSheet.create({
       lineHeight: 40.14,
       marginTop: 33,
       marginBottom: 32
-    },
-    input: {
-      height: 52,
-      borderColor: '#000000',
-      borderStyle: 'solid',
-      borderWidth: 2,
-      marginBottom: 16,
-      padding: 17,
     },
     textPolicy: {
       marginTop: 16,

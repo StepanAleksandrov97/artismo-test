@@ -1,12 +1,14 @@
-import React from 'react';
-import {Image, ImageBackground, Text, View} from 'react-native';
-import {CustomerButton} from '../../components';
+import React, { useCallback } from 'react';
+import { Image, ImageBackground, Text, View } from 'react-native';
+import { CustomerButton } from '../../components';
 import images from '../../assets'
 import styles from './style'
+import { useNavigation } from '@react-navigation/native';
 
-const naviLink = "RegisterFirstStep"
-
-export const StartScreen = ({navigation}: any) => {
+export const StartScreen = () => {
+  const { navigate } = useNavigation()
+  const navigateToFirstRegisterStep = useCallback(() => navigate('RegisterFirstStep'), []);
+  // const navivateToREgist=us
   return (
     <View style={styles.container}>
       <ImageBackground source={images.BACKGROUND} style={styles.backgroundImage}>
@@ -24,7 +26,7 @@ export const StartScreen = ({navigation}: any) => {
         </View>
       </ImageBackground>
       <View style={styles.button}>
-         <CustomerButton navigateUrl={naviLink} navigation={navigation} buttonText='register'/>
+         <CustomerButton onPress={navigateToFirstRegisterStep} buttonText='register'/>
       </View>
     </View>
   );

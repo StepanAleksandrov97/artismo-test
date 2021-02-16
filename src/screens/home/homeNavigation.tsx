@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import { HomeScreen, Search, Chats } from '../index';
+import { HomeScreen, Search, Chats, Chat } from '../../screens';
 
 
 export type TabParamList = {
@@ -15,7 +15,7 @@ const Tab = createBottomTabNavigator<TabParamList>();
 
 export const HomeNavigation = () => {
   return (
-    <Tab.Navigator >
+    <Tab.Navigator initialRouteName='Home'>
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Search" component={Search} />
       <Tab.Screen name="Add" component={HomeScreen} />
